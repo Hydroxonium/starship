@@ -38,7 +38,7 @@ pub fn module<'a>(context: &'a Context) -> Option<Module<'a>> {
         (Shell::Fish, "default")
         | (Shell::Zsh, "vicmd" | "hxcmd")
         | (Shell::Cmd | Shell::PowerShell | Shell::Pwsh, "vi") => ShellEditMode::Normal,
-        (Shell::Fish, "visual") => ShellEditMode::Visual,
+        (Shell::Fish, "visual") | (Shell::Zsh, "hxsel") => ShellEditMode::Visual,
         (Shell::Fish, "replace") => ShellEditMode::Replace,
         (Shell::Fish, "replace_one") => ShellEditMode::ReplaceOne,
         _ => ASSUMED_MODE,
